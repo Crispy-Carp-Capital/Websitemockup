@@ -285,7 +285,7 @@ export function Checkbox({
 
 // Button Component
 interface ButtonProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     onClick?: () => void;
     variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
     size?: 'sm' | 'md' | 'lg';

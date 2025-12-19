@@ -36,7 +36,7 @@ export function useWebSocket(options: UseWebSocketOptions = {}) {
 
     const priceRef = useRef(initialPrice);
     const basePrice = useRef(initialPrice);
-    const intervalRef = useRef<ReturnType<typeof setInterval>>();
+    const intervalRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 
     const connect = useCallback(() => {
         setState((prev) => ({ ...prev, isConnected: true }));

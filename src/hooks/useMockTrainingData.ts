@@ -32,7 +32,7 @@ export function useMockTrainingData(options: UseMockTrainingDataOptions = {}) {
         addPriceCandle,
     } = useTrainingStore();
 
-    const intervalRef = useRef<ReturnType<typeof setInterval>>();
+    const intervalRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
     const stepRef = useRef(progress.currentStep);
     const episodeRef = useRef(learningCurve.length);
 

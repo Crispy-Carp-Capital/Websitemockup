@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
 import {
     Pause,
     Play,
@@ -802,7 +801,7 @@ export function TrainingMonitor() {
         actionStats,
         stateHealth,
         tradePerformance,
-        currentEpisode,
+        currentEpisode: _currentEpisode,
         logs,
         pauseTraining,
         resumeTraining,

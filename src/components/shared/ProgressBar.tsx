@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { formatPercent, formatDurationShort } from '../../utils/formatters';
 
@@ -170,10 +169,10 @@ export function StepProgress({ steps, orientation = 'vertical' }: StepProgressPr
                     </div>
                     <span
                         className={`text-sm ${step.current
-                                ? 'font-medium text-dark-900 dark:text-dark-100'
-                                : step.completed
-                                    ? 'text-dark-500 dark:text-dark-400'
-                                    : 'text-dark-400 dark:text-dark-500'
+                            ? 'font-medium text-dark-900 dark:text-dark-100'
+                            : step.completed
+                                ? 'text-dark-500 dark:text-dark-400'
+                                : 'text-dark-400 dark:text-dark-500'
                             }`}
                     >
                         {step.label}

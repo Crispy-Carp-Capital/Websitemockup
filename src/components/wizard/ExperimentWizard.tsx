@@ -1,10 +1,8 @@
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import {
     ArrowLeft,
     ArrowRight,
-    Check,
     Rocket,
     Database,
     Cpu,
@@ -221,8 +219,8 @@ function Step2Model() {
                         key={algo}
                         onClick={() => updateModel({ algorithm: algo })}
                         className={`p-4 rounded-xl border-2 transition-all ${model.algorithm === algo
-                                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                                : 'border-dark-200 dark:border-dark-700 hover:border-primary-300'
+                            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                            : 'border-dark-200 dark:border-dark-700 hover:border-primary-300'
                             }`}
                     >
                         <div className="text-center">
@@ -247,8 +245,8 @@ function Step2Model() {
                         key={arch}
                         onClick={() => updateModel({ architecture: arch })}
                         className={`p-4 rounded-xl border-2 transition-all ${model.architecture === arch
-                                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                                : 'border-dark-200 dark:border-dark-700 hover:border-primary-300'
+                            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                            : 'border-dark-200 dark:border-dark-700 hover:border-primary-300'
                             }`}
                     >
                         <div className="text-center">
@@ -426,8 +424,8 @@ function Step4Reward() {
                         key={type.value}
                         onClick={() => updateReward({ type: type.value })}
                         className={`p-4 rounded-xl border-2 transition-all text-left ${reward.type === type.value
-                                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                                : 'border-dark-200 dark:border-dark-700 hover:border-primary-300'
+                            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                            : 'border-dark-200 dark:border-dark-700 hover:border-primary-300'
                             }`}
                     >
                         <p className="font-bold text-dark-900 dark:text-white">{type.label}</p>
@@ -563,8 +561,8 @@ function Step5Environment() {
                         key={compute}
                         onClick={() => updateResources({ compute })}
                         className={`p-4 rounded-xl border-2 transition-all ${resources.compute === compute
-                                ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
-                                : 'border-dark-200 dark:border-dark-700 hover:border-primary-300'
+                            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                            : 'border-dark-200 dark:border-dark-700 hover:border-primary-300'
                             }`}
                     >
                         <p className="font-bold text-dark-900 dark:text-white">{compute}</p>

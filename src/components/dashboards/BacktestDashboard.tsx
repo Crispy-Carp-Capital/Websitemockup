@@ -9,7 +9,6 @@ import {
     createColumnHelper,
     SortingState,
 } from '@tanstack/react-table';
-import { motion } from 'framer-motion';
 import {
     Download,
     Share2,
@@ -30,7 +29,7 @@ import { useBacktestStore } from '../../stores/backTestStore';
 import { Button, ButtonGroup } from '../shared/FormControls';
 import { KPICard, ComparisonTable } from '../shared/KPICards';
 import { EquityCurveChart, DrawdownChart, RollingMetricsChart, CandlestickChart } from '../shared/Charts';
-import { formatCurrency, formatPercent, formatRatio, formatDate, formatMinutes, formatNumber } from '../../utils/formatters';
+import { formatCurrency, formatPercent, formatRatio, formatDate, formatMinutes } from '../../utils/formatters';
 import { generateCandleSeries } from '../../utils/mockDataGenerator';
 import type { Trade, MonthlyReturn } from '../../types/trading';
 import type { CandleData } from '../../types/training';
@@ -73,8 +72,6 @@ function BacktestReplayMonitor({ trades }: { trades: Trade[] }) {
 
             // Generate price data with trade markers
             const priceData = generateCandleSeries(60, 40000 + day * 20).map((candle, i) => {
-                const tradeIndex = Math.floor((day / totalDays) * trades.length);
-                const trade = trades[tradeIndex];
                 return {
                     ...candle,
                     agentAction: i === 15 ? 'long' as const : i === 45 ? 'short' as const : undefined,
@@ -226,8 +223,8 @@ function BacktestReplayMonitor({ trades }: { trades: Trade[] }) {
                 <div className="bg-dark-50 dark:bg-dark-900/50 rounded-lg p-3 text-center">
                     <p className="text-xs text-dark-500">Position</p>
                     <p className={`font-bold ${current.currentPosition === 'long' ? 'text-success-500' :
-                            current.currentPosition === 'short' ? 'text-error-500' :
-                                'text-dark-500'
+                        current.currentPosition === 'short' ? 'text-error-500' :
+                            'text-dark-500'
                         }`}>
                         {current.currentPosition.toUpperCase()}
                     </p>
@@ -320,8 +317,8 @@ const columns = [
             const action = info.getValue();
             return (
                 <span className={`px-2 py-0.5 rounded text-xs font-medium ${action === 'BUY' ? 'bg-success-100 dark:bg-success-900/30 text-success-600' :
-                        action === 'SHORT' ? 'bg-error-100 dark:bg-error-900/30 text-error-600' :
-                            'bg-dark-100 dark:bg-dark-700 text-dark-600'
+                    action === 'SHORT' ? 'bg-error-100 dark:bg-error-900/30 text-error-600' :
+                        'bg-dark-100 dark:bg-dark-700 text-dark-600'
                     }`}>
                     {action}
                 </span>
